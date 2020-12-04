@@ -1,0 +1,15 @@
+class A: ...
+class B: ...
+class C: ...
+
+def factory(classname):
+    cls = globals()[classname]
+    return cls()
+
+def factory(classname):
+     from myproject import mymodule
+     cls = getattr(mymodule, classname)
+     return cls()
+     
+     
+     #https://stackoverflow.com/questions/51142320/how-to-instantiate-class-by-its-string-name-in-python-from-current-file
